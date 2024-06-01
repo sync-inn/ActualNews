@@ -6,6 +6,8 @@ interface News {
   bias: string;
 }
 
+// todo: add source field later
+
 export const NewsAlerts: News[] = [
   {
     id: "1",
