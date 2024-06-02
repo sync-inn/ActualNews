@@ -10,8 +10,8 @@ import {
 } from "../ui/card";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
-import { Player } from "@lottiefiles/react-lottie-player";
-import animation from "@/lib/lottie/2.json";
+// import { Player } from "@lottiefiles/react-lottie-player";
+// import animation from "@/lib/lottie/2.json";
 
 function Cards() {
   // for api purposes
@@ -30,7 +30,7 @@ function Cards() {
   //   }
 
   return (
-    <div className="grid sm:grid-col md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div className="grid sm:grid-col md:grid-col lg:grid-cols-3 gap-10">
       {NewsAlerts.map((newsItem) => (
         <div key={newsItem.id}>
           <Card className="w-[350px] shadow-lg border-solid ">
