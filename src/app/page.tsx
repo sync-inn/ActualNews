@@ -1,4 +1,7 @@
+// "use client";
+
 import Navbar from "@/components/layout/Navbar";
+import Cards from "@/components/main/cards";
 import { Github, Linkedin } from "lucide-react";
 
 export default function Home() {
@@ -8,8 +11,11 @@ export default function Home() {
         <Navbar />
       </nav>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div></div>
+        <div>
+          <Cards />
+        </div>
       </main>
+      {/* footer code */}
       <footer className="bg-gray-400 text-white p-4 ">
         <div className="container mx-auto flex justify-between items-center">
           <div>
