@@ -12,14 +12,23 @@ import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animation from "@/lib/lottie/2.json";
-// import { unstable_noStore } from "next/cache";
+import { unstable_noStore } from "next/cache";
+
+interface Data {
+  id: string;
+  title: string;
+  description: string;
+  alert: boolean;
+  bias: string;
+}
 
 function Cards() {
   // for api purposes
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Data[]>([]);
 
   useEffect(() => {
+    unstable_noStore();
     const fetchData = async () => {
       console.log("Data fetching began");
       try {
@@ -30,10 +39,11 @@ function Cards() {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data", error);
+        setData(NewsAlerts);
       }
     };
     fetchData();
-  });
+  }, []);
 
   if (loading) {
     return (
@@ -48,7 +58,7 @@ function Cards() {
 
   return (
     <div className="grid sm:grid-col md:grid-col lg:grid-cols-3 gap-10">
-      {NewsAlerts.map((item) => (
+      {data.map((item) => (
         <div key={item.id}>
           <Card className="w-[350px] shadow-lg border-solid ">
             <CardHeader>

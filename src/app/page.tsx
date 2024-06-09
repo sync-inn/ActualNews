@@ -24,11 +24,11 @@ export default function Home() {
             </h1>
           </div>
           <div className="flex flex-row">
-            <a href="/" className="mr-4">
+            <a href="/" className="mr-4 hover:bg-red-600">
               <Linkedin size={24} />
             </a>
             <a href="/">
-              <Github size={24} />
+              <Github size={24} className="hover:bg-gray-600" />
             </a>
           </div>
         </div>
