@@ -24,7 +24,7 @@ interface Data {
 
 function Cards() {
   // for api purposes
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Data[]>([]);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ function Cards() {
       } catch (error) {
         console.error("Error fetching data", error);
         setData(NewsAlerts);
+        setLoading(false);
       }
     };
     fetchData();
