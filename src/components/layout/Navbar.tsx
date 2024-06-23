@@ -43,8 +43,8 @@ async function Navbar() {
             {user ? (
               <div className="flex flex-col">
                 <p>{user.given_name}</p>
-                
-              <LogoutLink>Logout</LogoutLink>
+
+                <LogoutLink>Logout</LogoutLink>
               </div>
             ) : (
               <div className="flex flex-col">
