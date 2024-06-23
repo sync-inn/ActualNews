@@ -1,21 +1,22 @@
 // "use client";
 
 import React from "react";
-import {
-  RegisterLink,
-  LoginLink,
-  LogoutLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+// import {
+//   RegisterLink,
+//   LoginLink,
+//   LogoutLink,
+// } from "@kinde-oss/kinde-auth-nextjs/components";
+// import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Image from "next/image";
 // import { Button } from "../ui/button";
 // import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 async function Navbar() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  // shut down kinde temporarily
+  // const { getUser } = getKindeServerSession();
+  // const user = await getUser();
 
-  console.log(user);
+  // console.log(user);
   return (
     <header className="bg-gray-300 h-16 items-center relative shadow-xl w-full z-10 md:h-20 lg:rounded-2xl">
       <div className="flex flex-center flex-col h-full justify-center mx-auto px-3 relative">
@@ -40,7 +41,8 @@ async function Navbar() {
               
             </a> */}
 
-            {user ? (
+            {/* temporarily shut down */}
+            {/* {user ? (
               <div className="flex flex-col">
                 <p>{user.given_name}</p>
 
@@ -50,8 +52,8 @@ async function Navbar() {
               <div className="flex flex-col">
                 <LoginLink>Sign in</LoginLink>
                 <RegisterLink>Sign Up</RegisterLink>
-              </div>
-            )}
+              </div> */}
+            {/* )} */}
           </div>
         </div>
       </div>
