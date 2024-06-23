@@ -32,7 +32,9 @@ function Cards() {
     const fetchData = async () => {
       console.log("Data fetching began");
       try {
-        const response = await fetch("http://localHost:3001/get/grabNews");
+        const response = await fetch(
+          "https://server.wheredoc.org/get/grabNews"
+        );
         const data = await response.json();
         setData(data);
         console.log(data);
