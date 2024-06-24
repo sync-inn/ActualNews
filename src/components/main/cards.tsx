@@ -13,12 +13,14 @@ import { Button } from "../ui/button";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animation from "@/lib/lottie/2.json";
 import { unstable_noStore } from "next/cache";
+import Link from "next/link";
 
 interface Data {
   id: string;
   title: string;
   description: string;
   alert: boolean;
+  Source: string;
   bias: string;
 }
 
@@ -73,7 +75,9 @@ function Cards() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
-              <Button>Source</Button>
+              <Link href={`${item.Source}`}>
+                <Button>Source</Button>
+              </Link>
               <Label>
                 {item.alert ? (
                   <p className="text-red-800 font-Poppins font-bold">Alert</p>

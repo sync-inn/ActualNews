@@ -3,6 +3,7 @@ interface News {
   title: string;
   description: string;
   alert: boolean;
+  Source: string;
   bias: string;
 }
 
@@ -15,6 +16,7 @@ export const NewsAlerts: News[] = [
     description:
       "there is a problem from our side, so the news could not load. very sorry, we will resolve this as soon as possible",
     alert: true,
+    Source: "",
     bias: "100",
   },
 ];
