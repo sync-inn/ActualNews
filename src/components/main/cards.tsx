@@ -13,18 +13,20 @@ import { Button } from "../ui/button";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animation from "@/lib/lottie/2.json";
 import { unstable_noStore } from "next/cache";
+import Link from "next/link";
 
 interface Data {
   id: string;
   title: string;
   description: string;
   alert: boolean;
+  Source: string;
   bias: string;
 }
 
 function Cards() {
   // for api purposes
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Data[]>([]);
 
   useEffect(() => {
@@ -32,7 +34,9 @@ function Cards() {
     const fetchData = async () => {
       console.log("Data fetching began");
       try {
-        const response = await fetch("http://localHost:3001/get");
+        const response = await fetch(
+          "https://server.wheredoc.org/get/grabNews"
+        );
         const data = await response.json();
         setData(data);
         console.log(data);
@@ -40,6 +44,7 @@ function Cards() {
       } catch (error) {
         console.error("Error fetching data", error);
         setData(NewsAlerts);
+        setLoading(false);
       }
     };
     fetchData();
@@ -70,13 +75,15 @@ function Cards() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
-              <Button>Source</Button>
+              <Link href={`${item.Source}`}>
+                <Button>Source</Button>
+              </Link>
               <Label>
                 {item.alert ? (
                   <p className="text-red-800 font-Poppins font-bold">Alert</p>
                 ) : null}
               </Label>
-              <Label>Bias rating: {item.bias}</Label>
+              <Label hidden>Bias rating: {item.bias}</Label>
             </CardFooter>
           </Card>
         </div>
