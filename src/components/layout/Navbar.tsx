@@ -32,7 +32,9 @@ async function Navbar() {
               </Avatar>
             </div> */}
             <div className="flex-grow flex items-center justify-center">
-              <h1 className="text-4xl font-Poppins font-bold">Actual News</h1>
+              <h1 className="text-4xl font-Poppins font-bold">
+                Welcome to Actual News
+              </h1>
             </div>
           </div>
           <div className="flex flex-wrap justify-end items-end ml-8 sm:ml-12 md:ml-24 lg:ml-60">

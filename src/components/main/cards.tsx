@@ -83,7 +83,7 @@ function Cards() {
                   <p className="text-red-800 font-Poppins font-bold">Alert</p>
                 ) : null}
               </Label>
-              <Label>Bias rating: {item.bias}</Label>
+              <Label hidden>Bias rating: {item.bias}</Label>
             </CardFooter>
           </Card>
         </div>
