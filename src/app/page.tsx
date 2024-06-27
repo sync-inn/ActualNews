@@ -3,6 +3,8 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
+import NavigationMenuLanding from "@/components/layout/NavigationMenu";
+import NavigationMenu from "@/components/layout/NavigationMenu";
 import Cards from "@/components/main/cards";
 import { Github, Linkedin } from "lucide-react";
 import { unstable_noStore } from "next/cache";
@@ -47,7 +49,9 @@ export default function Home() {
     <section>
       <nav>
         <Navbar />
+        <NavigationMenuLanding/>
       </nav>
+      
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div>
           <Cards />
