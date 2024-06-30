@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 // import {
 //   RegisterLink,
 //   LoginLink,
@@ -11,8 +11,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
 
-
-async function Navbar() {
+function Navbar() {
   // const { getUser } = getKindeServerSession();
   // const user = await getUser();
 
@@ -63,7 +62,6 @@ async function Navbar() {
               </div>
             )}
           </div> */}
-          
         </div>
       </div>
     </header>

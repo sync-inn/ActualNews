@@ -22,12 +22,14 @@ interface Data {
   alert: boolean;
   Source: string;
   bias: string;
+  isExpanded?: boolean;
 }
 
 function Cards() {
   // for api purposes
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Data[]>([]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     unstable_noStore();
@@ -50,6 +52,15 @@ function Cards() {
     fetchData();
   }, []);
 
+  const toggleExpand = (id: string) => {
+    const index = data.findIndex((item) => item.id === id);
+    if (index !== -1) {
+      const newData = [...data];
+      newData[index].isExpanded = !newData[index].isExpanded;
+      setData(newData);
+    }
+  };
+
   if (loading) {
     return (
       <div>
@@ -71,7 +82,23 @@ function Cards() {
             </CardHeader>
             <CardContent>
               <div className="grid items-end justify-center grid-cols gap-7">
-                <p>{item.description}</p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: item.isExpanded
+                      ? item.description
+                      : item.description.slice(0, 100) + "...",
+                  }}
+                />
+                {!item.isExpanded && (
+                  <button onClick={() => toggleExpand(item.id)}>
+                    Read More
+                  </button>
+                )}
+                {item.isExpanded && (
+                  <button onClick={() => toggleExpand(item.id)}>
+                    Read Less
+                  </button>
+                )}
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
