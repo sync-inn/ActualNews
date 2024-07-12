@@ -90,14 +90,14 @@ function Cards() {
                   }}
                 />
                 {!item.isExpanded && (
-                  <button onClick={() => toggleExpand(item.id)}>
+                  <Button onClick={() => toggleExpand(item.id)}>
                     Read More
-                  </button>
+                  </Button>
                 )}
                 {item.isExpanded && (
-                  <button onClick={() => toggleExpand(item.id)}>
+                  <Button onClick={() => toggleExpand(item.id)}>
                     Read Less
-                  </button>
+                  </Button>
                 )}
               </div>
             </CardContent>
