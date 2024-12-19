@@ -74,7 +74,7 @@ function Cards() {
 
   return (
     <div className="grid sm:grid-col md:grid-col lg:grid-cols-3 gap-10">
-      {data.map((item) => (
+      {/* {data.map((item) => (
         <div key={item.id}>
           <Card className="w-[350px] shadow-lg border-solid ">
             <CardHeader>
@@ -114,7 +114,7 @@ function Cards() {
             </CardFooter>
           </Card>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
